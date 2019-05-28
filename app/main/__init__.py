@@ -1,4 +1,4 @@
-# from flask import Blueprint
-# main = Blueprint('main', __name__)
-# from . import views, error,forms
-# s.
+from flask import Blueprint
+main = Blueprint('main', __name__)
+from . import views, error,forms
+s.
