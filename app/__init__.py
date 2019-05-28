@@ -13,8 +13,8 @@ login_manager.login_view = 'auth.login'
 
 
 
-# bootstrap = Bootstrap()
-# db = SQLAlchemy()
+bootstrap = Bootstrap()
+db = SQLAlchemy()
 
 # photos = UploadSet('photos',IMAGES)
 # mail=Mail()
