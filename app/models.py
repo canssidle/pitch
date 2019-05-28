@@ -41,16 +41,16 @@ class User(UserMixin,db.Model):
     def __repr__(self):
         return f'User {self.username}'
 
-# class Pitch(db.Model):
-#     __tablename__='pitch'
-#     id=db.Column(db.Integer,primary_key=True)
-#     title=db.Column(db.String(255))
-#     description=db.Column(db.String)
-#     upvote = db.Column(db.Integer)
-#     downvote = db.Column(db.Integer)
-#     comments_id = db.relationship('Comments',backref = 'iscomment', lazy = 'dynamic')
-#     posted = db.Column(db.DateTime,default=datetime.utcnow)
-#     user_id = db.Column(db.Integer,db.ForeignKey("users.id"))
+class Pitch(db.Model):
+    __tablename__='pitch'
+    id=db.Column(db.Integer,primary_key=True)
+    title=db.Column(db.String(255))
+    description=db.Column(db.String)
+    upvote = db.Column(db.Integer)
+    downvote = db.Column(db.Integer)
+    comments_id = db.relationship('Comments',backref = 'iscomment', lazy = 'dynamic')
+    posted = db.Column(db.DateTime,default=datetime.utcnow)
+    user_id = db.Column(db.Integer,db.ForeignKey("users.id"))
 
 
 #     def save_pitch(self):
