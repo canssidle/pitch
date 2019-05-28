@@ -36,9 +36,9 @@ def pitch():
     title= 'Pitches'
     return render_template('new_pitch.html',pitch_form=form,pitch =pitch)
 
-# @main.route('/comment/new/', methods=['GET','POST'])
-# @login_required
-# def new_comment():
+@main.route('/comment/new/', methods=['GET','POST'])
+@login_required
+def new_comment():
 
 #     '''
 #     View new comment route function that returns a page with a form to create a pitch for the specified category
