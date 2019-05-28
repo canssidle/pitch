@@ -64,13 +64,13 @@ def pitch_comments(id):
     if request.args.get("upvote"):
         pitch.upvote = pitch.upvote+1
 
-#         db.session.add(pitch)
-#         db.session.commit()
+        db.session.add(pitch)
+        db.session.commit()
 
-#         return redirect("/pitch_comments/{pitch_id}".format(pitch_id=pitch.id))
+        return redirect("/pitch_comments/{pitch_id}".format(pitch_id=pitch.id))
 
-#     elif request.args.get("downvote"):
-#         pitch.downvote=pitch.downvote+1
+    elif request.args.get("downvote"):
+        pitch.downvote=pitch.downvote+1
 
 #         db.session.add(pitch)
 #         db.session.commit()
