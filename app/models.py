@@ -33,13 +33,13 @@ class User(UserMixin,db.Model):
     def verify_password(self,password):
         return check_password_hash(self.pass_hash,password)
 
-#     def save_user(self):
-#         db.session.add(self)
-#         db.session.commit()
+    def save_user(self):
+        db.session.add(self)
+        db.session.commit()
 
         
-#     def __repr__(self):
-#         return f'User {self.username}'
+    def __repr__(self):
+        return f'User {self.username}'
 
 # class Pitch(db.Model):
 #     __tablename__='pitch'
