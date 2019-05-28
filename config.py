@@ -20,14 +20,14 @@ class Config:
   
 
 
-# class ProdConfig(Config):
-#     '''
-#     Pruduction  configuration child class
+class ProdConfig(Config):
+    '''
+    Pruduction  configuration child class
 
-#     Args:
-#         Config: The parent configuration class with General configuration settings
-#     '''
-#     SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
+    Args:
+        Config: The parent configuration class with General configuration settings
+    '''
+    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
     
 # class TestConfig(Config):
 #     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://canssidle:judycharles@localhost/pitch_test'
