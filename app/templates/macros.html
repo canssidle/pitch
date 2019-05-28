@@ -13,10 +13,9 @@
                 <li class="text-center">
                     <h2>{{pitch.title}}</h2>
                     <h3>{{pitch.description}}</h3>
-                    <a href ="/pitch_comments/{{pitch.id}}?upvote=1">Upvote: {{pitch.Upvote}}</a>
-                    <a href ="/pitch_comments/{{pitch.id}}?dpwnvote=1">Downvote: {{pitch.Downvote}}</a>  
+                      
                     <h3 class="comment-create">
-                        <a href="{{url_for('main.new_comment')}}">Add Comment</a>                                                        
+                        <a href="{{url_for('main.new_comment', id=pitch.id)}}">Add Comment</a>                                                        
                     </h3>
                 </li>
 

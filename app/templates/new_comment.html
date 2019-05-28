@@ -19,7 +19,10 @@
             </div>
 
             <div class="col-md-2 col-lg-2">
-
+                {% for item in comments %}
+                    {{item.posted_by}}
+                    {{item.comment_body}}
+                {% endfor %}
             </div>
 
         </div>

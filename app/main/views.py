@@ -25,58 +25,60 @@ def pitch():
     if form.validate_on_submit():
         title=form.title.data
         description=form.description.data
-        upvote=0
-        downvote=0
-        new_pitch=Pitch(title=title,description=description,upvote=upvote,downvote=downvote)
+        category=form.category.data
+       
+        new_pitch=Pitch(title=title,description=description,category=category)
         new_pitch.save_pitch()
         return redirect(url_for('.index'))
 
     title= 'Pitches'
     return render_template('new_pitch.html',pitch_form=form,pitch =pitch)
 
-@main.route('/comment/new', methods=['GET','POST'])
+@main.route('/comment/new/<id>', methods=['GET','POST'])
 @login_required
-def new_comment():
+def new_comment(id):
     form = CommentForm()
-    comments = Comments.query.all()
+    pitch = Pitch.query.filter_by(id=id).first()
+    comments = Comments.query.filter_by(pitch_id=pitch.id).all()
     # Pitch.query.filter_by(user_id=current_user.id).all()
     # pitch = Pitch.query.filter_by(id=id).first()
     # if pitch is None:
     #     abort(404)
     if form.validate_on_submit():
         name=form.name.data
+        title = form.title.data
         
 
-        new_comment = Comment(name=name)
+        new_comment = Comments(comment_body=name, comment_title=title, posted_by = current_user.username, iscomment=pitch)
         new_comment.save_comment()
-        return redirect(url_for('.index'))
+        return redirect(url_for('.new_comment',id=id))
+        print("Hello")
+    # pitch = Pitch.query.filter_by(id=id).first()
+    
+    # comment = Comment.query.filter_by(pitch_id=pitch.id).all()
     title = "Add a Comment"
     return render_template('new_comment.html', title=title, form=form,comments=comments, )
+
+# @main.route('/comment/new', methods=["GET","POST"])
+# @login_required
+# def new_comment():
+#     form = CommentForm()
+#     if form.validate_on_submit():
+#         title = form.name.data
+
+        
+    
 
 
 
 
 @main.route('/pitch_comments/<int:id>',methods=['GET','POST'])
 def pitch_comments(id):
-    pitch =Pitch.query.get_or_404(id)
+    pitch =Pitch.query.filter_by(id=id)
     comment= Comments.query.all()
     form=CommentForm()
-    if request.args.get("upvote"):
-        pitch.upvote = pitch.upvote+1
-
-        db.session.add(pitch)
-        db.session.commit()
-
-        return redirect("/pitch_comments/{pitch_id}".format(pitch_id=pitch.id))
-
-    elif request.args.get("downvote"):
-        pitch.downvote=pitch.downvote+1
-
-        db.session.add(pitch)
-        db.session.commit()
-
-        return redirect("/pitch_comments/{pitch_id}".format(pitch_id=pitch.id))
-
+    
+    
     if form.validate_on_submit():
         comment = form.comments.data
 
