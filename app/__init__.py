@@ -16,9 +16,9 @@ login_manager.login_view = 'auth.login'
 bootstrap = Bootstrap()
 db = SQLAlchemy()
 
-# photos = UploadSet('photos',IMAGES)
-# mail=Mail()
-# simple = SimpleMDE()
+photos = UploadSet('photos',IMAGES)
+mail=Mail()
+simple = SimpleMDE()
 
 
 # def create_app(config_name):
