@@ -84,14 +84,14 @@ class Comments(db.Model):
         return f"Comment('{self.comment}', '{self.posted}')"
 
        
-#     @classmethod
-#     def get_comments(cls):
-#         '''
-#         Function that queries the Groups Table in the database and returns all the information from the Groups Table
-#         Returns:
-#             groups : all the information in the groups table
-#         '''
+    @classmethod
+    def get_comments(cls):
+        '''
+        Function that queries the Groups Table in the database and returns all the information from the Groups Table
+        Returns:
+            groups : all the information in the groups table
+        '''
 
-#         comments = Comments.query.all()
+        comments = Comments.query.all()
 
-#         return comments
+        return comments
