@@ -21,9 +21,9 @@ class User(UserMixin,db.Model):
     pitches= db.relationship('Pitch',backref='user',lazy="dynamic")
 
 
-#     @property
-#     def password(self):
-#         raise AttributeError('You cannnot read the password attribute')
+    @property
+    def password(self):
+        raise AttributeError('You cannnot read the password attribute')
 
 #     @password.setter
 #     def password(self, password):
