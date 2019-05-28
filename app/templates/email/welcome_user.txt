@@ -1,0 +1,4 @@
+Hello {{user.username}}
+Welcome to One-Minute-Pitch
+We have just seen you have signed up for our application.
+Thanks for joining the community,One-Minute-Picth ,where you can share your ideas to the community and also give your view on it.

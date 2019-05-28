@@ -1,0 +1,75 @@
+{% extends 'base.html'%}
+{% import 'macros.html' as macro%}
+<h1>One minute pitch</h1>
+{% block styles%}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+{% endblock %}
+{% block content %}
+<style>
+   
+     h2{            display: block;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 40px;
+            font-weight: 1000;
+            
+          }
+          ul {
+            font-family: Arial, Helvetica, sans-serif;
+          }
+          body{
+            background-image: url('/static/css/photo/back4.jpeg')
+          }
+          a{            
+              display: block;
+                    font-family: Arial, Helvetica, sans-serif;
+                    color:rgb(6, 10, 1);
+                    font-size: 20px;
+                    font-weight: 1000;
+                    text-align: center;
+                  }
+          
+</style>
+
+    <div class="container">
+
+        <div class="row">            
+            <h2 class="pitch-header" >
+                One Minute Pitch
+            </h2>
+                
+        </div>
+        <br><br><br>
+        <div class="row">
+            
+            <div class="col-md-4 col-lg-4"> 
+                <h2 class="pitch-create">
+                    <a href="/pitch/new">
+                        Pitch It Up
+                    </a>
+                </h2>
+                
+            </div> 
+
+        </div>
+        <hr>
+
+        <ul class="list-unstyled">
+
+            {{ macro.displayPitchList(pitch) }}
+
+        </ul>
+
+        <ul class="list-unstyled">
+            {{ macro.displayCommentList(comments) }}
+        </ul>
+
+
+
+        <hr>
+
+
+  </div>
+
+
+{% endblock %}

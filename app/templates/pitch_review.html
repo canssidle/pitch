@@ -1,0 +1,55 @@
+{% extends 'base.html'%}
+{% block content %}
+
+
+    <div class="col-md-2 col-lg-2">
+
+    </div>
+    <style>
+       
+         h2{            display: block;
+                font-family:Arial, Helvetica, sans-serif;
+                color: #360a70cc;
+                font-size: 40px;
+                font-weight: 1000;
+                text-align: center;
+              }
+              ul {
+                font-family: Arial, Helvetica, sans-serif;
+              }
+              body{
+                background-image: url('/static/css/photo/back3.jpeg')
+              }
+        </style>
+</div>
+
+
+        <style>
+            
+             a{            display: block;
+                    font-family: Arial, Helvetica, sans-serif;
+                    color: #360a70cc;
+                    font-size: 20px;
+                    font-weight: 1000;
+                    text-align: center;
+                  }
+                  
+            </style>
+
+    <div class=" col-xs-12 col-sm-12 col-md-8 col-lg-8 well pitch-well">
+
+        <li class="text-center">
+            <h2>{{pitches.title}}</h2>
+            <h2>{{pitches.description}}</h2>
+            <a href ="/pitch_comments/{{pitches.id}}?upvote=1">upvote: {{pitches.upvote}}</a>
+            <a href ="/pitch_comments/{{pitches.id}}?downvote=1">downvote: {{pitches.downvote}}</a>
+        </li>
+
+    </div>
+
+    <div class="col-md-2 col-lg-2">
+
+    </div>
+
+</div>
+{% endblock %}
