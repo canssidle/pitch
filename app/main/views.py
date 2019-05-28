@@ -40,20 +40,20 @@ def pitch():
 @login_required
 def new_comment():
 
-#     '''
-#     View new comment route function that returns a page with a form to create a pitch for the specified category
-#     '''
-#     comments = Comments.query.all()
-#     form =CommentForm()
-#     if form.validate_on_submit():
-#         name=form.name.data
-#         new_comment=Comments(name=name)
-#         new_comment.save_comment()
+    '''
+    View new comment route function that returns a page with a form to create a pitch for the specified category
+    '''
+    comments = Comments.query.all()
+    form =CommentForm()
+    if form.validate_on_submit():
+        name=form.name.data
+        new_comment=Comments(name=name)
+        new_comment.save_comment()
 
-#         return redirect(url_for('.index'))
+        return redirect(url_for('.index'))
 
-#     title = "New Comment"
-#     return render_template('new_comment.html', title=title, form=form,comments=comments)
+    title = "New Comment"
+    return render_template('new_comment.html', title=title, form=form,comments=comments)
 
 # @main.route('/pitch_comments/<int:id>',methods=['GET','POST'])
 
