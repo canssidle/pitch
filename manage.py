@@ -3,12 +3,12 @@ from app.models import User,Pitch,Comments
 from flask_script import Manager, Server
 from flask_migrate import Migrate, MigrateCommand
 
-# # We import the Manager class from flask-script that will initialize
-# # our extension and the Server class that helps us launch
-# # our application.
+# We import the Manager class from flask-script that will initialize
+# our extension and the Server class that helps us launch
+# our application.
 
-# # Creating app instance 
-# app = create_app('development')
+# Creating app instance 
+app = create_app('development')
 
 
 # manager = Manager(app)
