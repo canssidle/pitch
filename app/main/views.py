@@ -82,13 +82,13 @@ def pitch_comments(id):
 
         new_comment = Comments(id=id,review=review,user_id=current_user.id)
 
-#         new_review.save_comment()
-#         return redirect(url_for('main.pitch_comments',id=id))
-#     reviews = Comments.query.all()
-#     return render_template('new_comment.html',comment=comment,pitch=pitch,review_form=form)
+        new_review.save_comment()
+        return redirect(url_for('main.pitch_comments',id=id))
+    reviews = Comments.query.all()
+    return render_template('new_comment.html',comment=comment,pitch=pitch,review_form=form)
 
-#     title= 'Pitches'
-#     return render_template('new_comment.html',pitch=pitch)
+    title= 'Pitches'
+    return render_template('new_comment.html',pitch=pitch)
 
 
 # @main.route('/user/<uname>')
