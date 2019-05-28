@@ -7,17 +7,17 @@ from ..import db,photos
 import markdown2
 
 
-# @main.route('/')
-# def index():
-#     title = 'Home'
+@main.route('/')
+def index():
+    title = 'Home'
 
-#     pitch = Pitch.query.all()
+    pitch = Pitch.query.all()
 
-#     if pitch is None:
-#         abort (404)
+    if pitch is None:
+        abort (404)
     
-#     print(pitch)
-#     return render_template( 'index.html' ,title = title)
+    print(pitch)
+    return render_template( 'index.html' ,title = title)
 
 
 # @main.route('/pitch/new',methods=['GET','POST'])
