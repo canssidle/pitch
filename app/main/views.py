@@ -20,15 +20,15 @@ def index():
     return render_template( 'index.html' ,title = title)
 
 
-# @main.route('/pitch/new',methods=['GET','POST'])
-# @login_required
-# def pitch():
-#     form= PitchForm()
-#     if form.validate_on_submit():
-#         title=form.title.data
-#         description=form.description.data
-#         upvote=0
-#         downvote=0
+@main.route('/pitch/new',methods=['GET','POST'])
+@login_required
+def pitch():
+    form= PitchForm()
+    if form.validate_on_submit():
+        title=form.title.data
+        description=form.description.data
+        upvote=0
+        downvote=0
 #         new_pitch=Pitch(title=title,description=description,upvote=upvote,downvote=downvote)
 #         new_pitch.save_pitch()
 #         return redirect(url_for('.index'))
