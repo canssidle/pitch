@@ -53,9 +53,9 @@ class Pitch(db.Model):
     user_id = db.Column(db.Integer,db.ForeignKey("users.id"))
 
 
-#     def save_pitch(self):
-#         db.session.add(self)
-#         db.session.commit()
+    def save_pitch(self):
+        db.session.add(self)
+        db.session.commit()
 
 #     @classmethod
 #     def get_pitches(cls):
