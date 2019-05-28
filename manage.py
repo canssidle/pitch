@@ -1,7 +1,7 @@
-# from app import create_app,db
-# from app.models import User,Pitch,Comments
-# from flask_script import Manager, Server
-# from flask_migrate import Migrate, MigrateCommand
+from app import create_app,db
+from app.models import User,Pitch,Comments
+from flask_script import Manager, Server
+from flask_migrate import Migrate, MigrateCommand
 
 # # We import the Manager class from flask-script that will initialize
 # # our extension and the Server class that helps us launch
