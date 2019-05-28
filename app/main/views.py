@@ -1,10 +1,10 @@
-# from flask import render_template,redirect,url_for,request,abort
-# from . import main
-# from flask_login import login_required,login_user,logout_user,current_user
-# from ..models import Pitch,Comments,User
-# from .forms import PitchForm,CommentForm,UpdateProfile
-# from ..import db,photos
-# import markdown2
+from flask import render_template,redirect,url_for,request,abort
+from . import main
+from flask_login import login_required,login_user,logout_user,current_user
+from ..models import Pitch,Comments,User
+from .forms import PitchForm,CommentForm,UpdateProfile
+from ..import db,photos
+import markdown2
 
 
 # @main.route('/')
