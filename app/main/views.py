@@ -29,12 +29,12 @@ def pitch():
         description=form.description.data
         upvote=0
         downvote=0
-#         new_pitch=Pitch(title=title,description=description,upvote=upvote,downvote=downvote)
-#         new_pitch.save_pitch()
-#         return redirect(url_for('.index'))
+        new_pitch=Pitch(title=title,description=description,upvote=upvote,downvote=downvote)
+        new_pitch.save_pitch()
+        return redirect(url_for('.index'))
 
-#     title= 'Pitches'
-#     return render_template('new_pitch.html',pitch_form=form,pitch =pitch)
+    title= 'Pitches'
+    return render_template('new_pitch.html',pitch_form=form,pitch =pitch)
 
 # @main.route('/comment/new/', methods=['GET','POST'])
 # @login_required
