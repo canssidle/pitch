@@ -91,14 +91,14 @@ def pitch_comments(id):
     return render_template('new_comment.html',pitch=pitch)
 
 
-# @main.route('/user/<uname>')
-# def profile(uname):
-#     user = User.query.filter_by(username = uname).first()
+@main.route('/user/<uname>')
+def profile(uname):
+    user = User.query.filter_by(username = uname).first()
 
-#     if user is None:
-#         abort(404)
+    if user is None:
+        abort(404)
 
-#     return render_template("profile/profile.html", user = user)
+    return render_template("profile/profile.html", user = user)
 
 # @main.route('/user/<uname>/update',methods = ['GET','POST'])
 # @login_required
