@@ -57,13 +57,13 @@ class Pitch(db.Model):
         db.session.add(self)
         db.session.commit()
 
-#     @classmethod
-#     def get_pitches(cls):
-#         '''
-#         gets pitches from the database
-#         '''
-#         pitch =Pitch.query.all()
-#         return pitch
+    @classmethod
+    def get_pitches(cls):
+        '''
+        gets pitches from the database
+        '''
+        pitch =Pitch.query.all()
+        return pitch
 
 
     
