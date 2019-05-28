@@ -13,11 +13,9 @@ def index():
 
     pitch = Pitch.query.all()
 
-    if pitch is None:
-        abort (404)
     
-    print(pitch)
-    return render_template( 'index.html' ,title = title)
+ 
+    return render_template( 'index.html' ,title = title, pitch=pitch)
 
 
 @main.route('/pitch/new',methods=['GET','POST'])
@@ -36,27 +34,29 @@ def pitch():
     title= 'Pitches'
     return render_template('new_pitch.html',pitch_form=form,pitch =pitch)
 
-@main.route('/comment/new/', methods=['GET','POST'])
+@main.route('/comment/new', methods=['GET','POST'])
 @login_required
 def new_comment():
-
-    '''
-    View new comment route function that returns a page with a form to create a pitch for the specified category
-    '''
+    form = CommentForm()
     comments = Comments.query.all()
-    form =CommentForm()
+    # Pitch.query.filter_by(user_id=current_user.id).all()
+    # pitch = Pitch.query.filter_by(id=id).first()
+    # if pitch is None:
+    #     abort(404)
     if form.validate_on_submit():
         name=form.name.data
-        new_comment=Comments(name=name)
+        
+
+        new_comment = Comment(name=name)
         new_comment.save_comment()
-
         return redirect(url_for('.index'))
+    title = "Add a Comment"
+    return render_template('new_comment.html', title=title, form=form,comments=comments, )
 
-    title = "New Comment"
-    return render_template('new_comment.html', title=title, form=form,comments=comments)
+
+
 
 @main.route('/pitch_comments/<int:id>',methods=['GET','POST'])
-
 def pitch_comments(id):
     pitch =Pitch.query.get_or_404(id)
     comment= Comments.query.all()
@@ -98,7 +98,7 @@ def profile(uname):
     if user is None:
         abort(404)
 
-    return render_template("profile/profile.html", user = user)
+    return render_template("Profile/profile.html", user = user)
 
 @main.route('/user/<uname>/update',methods = ['GET','POST'])
 @login_required
@@ -117,7 +117,7 @@ def update_profile(uname):
 
         return redirect(url_for('.profile',uname=user.username))
 
-    return render_template('profile/update.html',form =form)
+    return render_template('Profile/update.html',form =form)
 
 @main.route('/user/<uname>/update/pic',methods= ['POST'])
 @login_required
