@@ -72,15 +72,15 @@ def pitch_comments(id):
     elif request.args.get("downvote"):
         pitch.downvote=pitch.downvote+1
 
-#         db.session.add(pitch)
-#         db.session.commit()
+        db.session.add(pitch)
+        db.session.commit()
 
-#         return redirect("/pitch_comments/{pitch_id}".format(pitch_id=pitch.id))
+        return redirect("/pitch_comments/{pitch_id}".format(pitch_id=pitch.id))
 
-#     if form.validate_on_submit():
-#         comment = form.comments.data
+    if form.validate_on_submit():
+        comment = form.comments.data
 
-#         new_comment = Comments(id=id,review=review,user_id=current_user.id)
+        new_comment = Comments(id=id,review=review,user_id=current_user.id)
 
 #         new_review.save_comment()
 #         return redirect(url_for('main.pitch_comments',id=id))
