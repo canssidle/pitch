@@ -55,14 +55,14 @@ def new_comment():
     title = "New Comment"
     return render_template('new_comment.html', title=title, form=form,comments=comments)
 
-# @main.route('/pitch_comments/<int:id>',methods=['GET','POST'])
+@main.route('/pitch_comments/<int:id>',methods=['GET','POST'])
 
-# def pitch_comments(id):
-#     pitch =Pitch.query.get_or_404(id)
-#     comment= Comments.query.all()
-#     form=CommentForm()
-#     if request.args.get("upvote"):
-#         pitch.upvote = pitch.upvote+1
+def pitch_comments(id):
+    pitch =Pitch.query.get_or_404(id)
+    comment= Comments.query.all()
+    form=CommentForm()
+    if request.args.get("upvote"):
+        pitch.upvote = pitch.upvote+1
 
 #         db.session.add(pitch)
 #         db.session.commit()
